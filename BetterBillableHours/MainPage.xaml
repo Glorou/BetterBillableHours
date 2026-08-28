@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:BetterBillableHours.Data"
+             xmlns:local="clr-namespace:BetterBillableHours.ViewModels"
+             x:Class="BetterBillableHours.MainPage"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.BindingContext>
+        <local:ClientViewModel/>
+    </ContentPage.BindingContext>
+
+    <NavigationPage.TitleView>
+        <Grid HorizontalOptions="Fill">
+            <Label Text="Home"
+               VerticalTextAlignment="Center"
+               FontSize="18"></Label>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <VerticalStackLayout x:Name="Stack"
+                             Padding="20,0"
+                             Spacing="25">
+            <Label
+                x:Name="Header"
+                Text="Select or create a Client to begin"
+                VerticalTextAlignment="Center" FontSize="Header"
+                />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width ="60"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <SearchBar Placeholder="Search"
+                           x:Name="SearchBar"/>
+                <Button Grid.Column="1" Text="+"
+                        Clicked="AddClient"
+                        x:Name="AddButton"
+                        />
+            </Grid>
+
+            <CollectionView
+                    x:Name="ClientPicker"
+                    ItemsSource="Binding Clients"
+                    SelectionMode="Single"
+                    SelectionChanged="OpenClientPage">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Client">
+                        <Grid>
+                            <Label Text="{Binding Name}" ></Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Entry
+                x:Name="NewClientEntry"
+                IsVisible="False"
+                Completed="SendEntry"></Entry>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
