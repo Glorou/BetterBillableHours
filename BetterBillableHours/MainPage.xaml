@@ -41,19 +41,26 @@
 
             <CollectionView
                     x:Name="ClientPicker"
-                    ItemsSource="Binding Clients"
+                    ItemsSource="{Binding Clients}"
                     SelectionMode="Single"
                     SelectionChanged="OpenClientPage">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="data:Client">
-                        <Grid>
-                            <Label Text="{Binding Name}" ></Label>
+                        <Grid Padding="3">
+                            <Label Text="{Binding Name, StringFormat='{0} &#x0d;&#x0a;'}"
+                                   FontSize="18"></Label>
+
+                            <Label HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="End"
+                                   TextColor="Grey"
+                                   Text="{Binding LastAccessed, StringFormat='Last used: {0}' }"></Label>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
             <Entry
+                VerticalOptions="End"
                 x:Name="NewClientEntry"
                 IsVisible="False"
                 Completed="SendEntry"></Entry>

@@ -16,12 +16,30 @@
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19509b1-c20a-4586-a50d-149a40f15eee" name="Changes" comment="" />
+    <list default="true" id="d19509b1-c20a-4586-a50d-149a40f15eee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BetterBillableHours/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BetterBillableHours/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BetterBillableHours/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BetterBillableHours/MainPage.xaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Glorou"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Glorou/BetterBillableHours.git",
+    "accountId": "6c3e8ff1-c989-48db-8b4f-767d600877fd"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -49,9 +67,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "XThreadsFramesViewSplitterKey": "0.46666667",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
     "iOS.BetterBillableHours.executor": "Debug",
     "settings.editor.selected.configurable": "AndroidSettingsPageId"
   }
@@ -127,7 +145,7 @@
       <workItem from="1787437980660" duration="2225000" />
       <workItem from="1787442605661" duration="7695000" />
       <workItem from="1787791638180" duration="747000" />
-      <workItem from="1787956094542" duration="3422000" />
+      <workItem from="1787956094542" duration="4260000" />
     </task>
     <servers />
   </component>

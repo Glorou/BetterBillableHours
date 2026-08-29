@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BetterBillableHours.Data
 {
@@ -22,8 +23,9 @@ namespace BetterBillableHours.Data
         }
 
     }
-    
-    public class Client
+
+    [ObservableObject]
+    public partial class Client
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

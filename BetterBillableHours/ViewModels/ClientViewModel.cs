@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.EntityFrameworkCore;
 
 namespace BetterBillableHours.ViewModels;
 
@@ -12,12 +13,13 @@ namespace BetterBillableHours.ViewModels;
 public partial class ClientViewModel : ObservableObject
 {
     [ObservableProperty]
-    private IList<Client> source;
+    private ObservableCollection<Client> source;
 
     [ObservableProperty]
     private Client selected;
 
-    public IList<Client> Clients { get; set; }
+
+    public ObservableCollection<Client> Clients { get; set; }
 
     public Client SelectedClient
     {
@@ -33,7 +35,9 @@ public partial class ClientViewModel : ObservableObject
 
     public ClientViewModel()
     {
+        MauiProgram.Database.Clients.Load();
         source = MauiProgram.Database.Clients.Local.ToObservableCollection();
+        Clients = source;
 
     }
 
@@ -75,13 +79,4 @@ public partial class ClientViewModel : ObservableObject
         }
 
     }
-
-    #region INotifyPropertyChanged
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-    #endregion
 }
